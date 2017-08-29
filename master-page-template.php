@@ -1,4 +1,4 @@
-<?php /* Template Name: Rode dames winterjassen */
+<?php /* Template Name: page template name */
 get_header();
 //Woocommerce get products from specific category with specific attribute
 ?>
