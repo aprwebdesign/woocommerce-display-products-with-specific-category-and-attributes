@@ -3,8 +3,18 @@ get_header();
 //Woocommerce get products from specific category with specific attribute
 ?>
 
+<div class="product-landingspage-banner"><div class="container-fluid"><h1><?php the_title(); ?></h1> <em></em></div></div>
+
 <div class="container-fluid">
 
+<div class="row">
+<div class="col-md-12 col-sm-12 landing-content">
+<?php $meta =  get_post_meta( get_the_ID(), 'advanced_options_landingspage-intro');
+echo $meta[0];
+?>
+
+</div>
+</div>
 
 <div class="col-md-12 col-sm-12">
 
@@ -13,7 +23,7 @@ get_header();
 $products = new WP_Query( array(
    'post_type'      => array('product'),
    'post_status'    => 'publish',
-    'product_cat' => 'dames-jassen',
+    'product_cat' => 'product category',
    'posts_per_page' => -1,
    'meta_query'     => array( array(
         'key' => '_visibility',
@@ -61,5 +71,13 @@ echo do_shortcode('[products ids="'.$product_ids.'"]');?>
 
 
 		<div class="clearfix"> </div>
+		
+		<div class="row">
+		<div class="col-md-12 col-sm-12">
+		<hr>
+		<?php the_content();?>
+		</div></div>
+				<div class="clearfix"> </div>
+
 	</div>
  <?php get_footer();?>
