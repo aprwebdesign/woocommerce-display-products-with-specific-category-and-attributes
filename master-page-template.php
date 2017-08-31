@@ -23,14 +23,12 @@ echo $meta[0];
 $products = new WP_Query( array(
    'post_type'      => array('product'),
    'post_status'    => 'publish',
-    'product_cat' => 'product category',
+    'product_cat' => 'category slug',
    'posts_per_page' => -1,
-   'meta_query'     => array( array(
-        'key' => '_visibility',
-        'value' => array('catalog', 'visible'),
-        'compare' => 'IN',
-    ) ),
-   'tax_query'      => array( array(
+   
+   'tax_query'      => array( 
+      array(
+   
    //Set kleur
         'taxonomy'        => 'pa_kleur',
         'field'           => 'slug',
